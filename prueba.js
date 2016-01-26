@@ -32,3 +32,42 @@ var array = ['coche1','coche2'];
   	array=['coche1','coche2'];
   	document.getElementById('prueba').innerHTML = "Array:" + array;
   }
+  
+  function getNameValue(num)
+  {
+      switch(num)
+      {
+          case 1:
+            return "Rock";
+            break;
+          case 2:
+            return "Paper";
+            break;
+          case 3:
+            return "Scissors";
+            break;
+      }
+  }
+  
+  function rockPaperScissors()
+  {
+      var user = document.getElementById('userChoice').value;
+      var random = Math.round(Math.random()*2)+1;
+      
+      if (user.length>0)
+      {
+        document.getElementById('result').innerHTML= "CPU: "+getNameValue(random)+"  User: " + getNameValue(user); 
+        if(random == user)
+        {
+            document.getElementById('result2').innerHTML= "It's a tie!";
+        }
+        
+        else if (((random-1)%3)+1==user)
+            document.getElementById('result2').innerHTML= "CPU wins!";
+            
+        else
+            document.getElementById('result2').innerHTML= "User wins!";
+      }
+      else
+        alert("Insert a value!");
+  }
