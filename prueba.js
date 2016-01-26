@@ -37,36 +37,37 @@ var array = ['coche1','coche2'];
   {
       switch(num)
       {
-          case 1:
+          case 0:
             return "Rock";
             break;
-          case 2:
+          case 1:
             return "Paper";
             break;
-          case 3:
+          case 2:
             return "Scissors";
             break;
       }
   }
   
+    function mod(n, m) {
+            return ((n % m) + m) % m;
+    }
+  
   function rockPaperScissors()
   {
       var user = parseInt(document.getElementById('userChoice').value);
-      var random = Math.round(Math.random()*2)+1;
-      if (user.length>0)
-      {
+      var random = Math.round(Math.random()*2);
+      
+     
         document.getElementById('result').innerHTML= "CPU: "+getNameValue(random)+"  User: "+ getNameValue(user); 
         if(random == user)
         {
             document.getElementById('result2').innerHTML= "It's a tie!";
         }
         
-        else if (((random-1)%3)+1==user)
+        else if ((mod(random-1,3)==user))
             document.getElementById('result2').innerHTML= "CPU wins!";
             
         else
             document.getElementById('result2').innerHTML= "User wins!";
-      }
-      else
-        alert("Insert a value!");
   }
