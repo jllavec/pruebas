@@ -51,12 +51,11 @@ var array = ['coche1','coche2'];
   
   function rockPaperScissors()
   {
-      var user = document.getElementById('userChoice').value;
+      var user = parseInt(document.getElementById('userChoice').value);
       var random = Math.round(Math.random()*2)+1;
-      
       if (user.length>0)
       {
-        document.getElementById('result').innerHTML= "CPU: "+getNameValue(random)+"  User: " + getNameValue(user); 
+        document.getElementById('result').innerHTML= "CPU: "+getNameValue(random)+"  User: "+ getNameValue(user); 
         if(random == user)
         {
             document.getElementById('result2').innerHTML= "It's a tie!";
