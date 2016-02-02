@@ -48,7 +48,7 @@
 
   paco.walk();
 
-  student1 = new Student("Carolina", "Fisica");
+  student1 = new Student("Carolina", "Physics");
 
   student1.sayHi();
 
